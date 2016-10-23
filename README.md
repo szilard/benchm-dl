@@ -21,7 +21,8 @@ acknowledge this reality.
 
 ### Conv-nets (CNN) 
 
-Image recognition on the MNIST dataset. 
+Image recognition on the MNIST dataset.
+Code and detailed results [here](cnn-mnist).
 
 On p2.xlarge (1 GPU):
 
