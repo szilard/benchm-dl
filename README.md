@@ -25,10 +25,10 @@ Image recognition on the MNIST dataset.
 
 On p2.xlarge (1 GPU):
 
-Tool       | Time (s) | GPU (%) | CPUs  | CPU1 (%) | Accuracy
------------|----------|---------|-------|----------|----------
-Keras (TF) |   37     |  66     |  4    |   18     |   0.8%
-Keras (th) |   146    |  86     |  1    |   100    |   0.9%
+Tool               | Time (s) | GPU (%) | CPUs  | CPU1 (%) | Accuracy
+-------------------|----------|---------|-------|----------|----------
+Keras (tensorflow) |   37     |  66     |  4    |   18     |   0.8%
+Keras (theano)     |   146    |  86     |  1    |   100    |   0.9%
 
 Theano backend is 4x slower and uses only one CPU core.
 
