@@ -24,6 +24,8 @@ acknowledge this reality.
 Image recognition on the MNIST dataset.
 Code and detailed results [here](cnn-mnist).
 
+#### By Tools
+
 On p2.xlarge (1 GPU):
 
 Tool               | Time (s) | GPU (%) | CPUs  | CPU1 (%) | Accuracy
@@ -32,6 +34,8 @@ Keras (tensorflow) |   37     |  66     |  4    |   18     |   0.8%
 Keras (theano)     |   130    |  97     |  1    |   100    |   0.9%
 
 Theano backend is 3.5x slower and uses only one CPU core.
+
+#### By GPU number/types
 
 Tensorflow backend:
 
@@ -46,5 +50,12 @@ P2 GPU is 1.5x faster than G2.
 Tensorflow uses only 1 GPU even on the multi-GPU server (on this small dataset/model).
 Theano obtained multi-GPU support only recently and has not been added to Keras yet.
 
+#### GPU vs CPU
+
+Device       | Time (s)  | vs GPU
+-------------|-----------|---------
+GPU (P2)     |   37      |   1x
+CPU 4 cores  |  326      |   9x
+CPU 32 cores |  130      |  3.5x
 
 

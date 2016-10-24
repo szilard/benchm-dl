@@ -367,6 +367,206 @@ mpstat -P ALL 3
 
 
 
+***   disable GPU / CPU only - p2.xlarge 4 cores   ***
+
+CUDA_VISIBLE_DEVICES=-1 python 1-keras.py
+
+Using TensorFlow backend.
+I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcublas.so locally
+I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcudnn.so locally
+I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcufft.so locally
+I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcurand.so locally
+E tensorflow/stream_executor/cuda/cuda_driver.cc:491] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:153] retrieving CUDA diagnostic information for host: ip-172-31-6-187
+I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:160] hostname: ip-172-31-6-187
+I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:185] libcuda reported version is: 352.99.0
+I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:356] driver version file contents: """NVRM version: NVIDIA UNIX x86_64 Kernel Module  352.99  Mon Jul  4 23:52:14 PDT 2016
+GCC version:  gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3)
+"""
+I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:189] kernel reported version is: 352.99.0
+I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:293] kernel version seems to match DSO: 352.99.0
+Epoch 1/10
+60000/60000 [==============================] - 32s - loss: 0.3104 - acc: 0.9018
+Epoch 2/10
+60000/60000 [==============================] - 32s - loss: 0.0770 - acc: 0.9765
+Epoch 3/10
+60000/60000 [==============================] - 32s - loss: 0.0604 - acc: 0.9806
+Epoch 4/10
+60000/60000 [==============================] - 32s - loss: 0.0501 - acc: 0.9841
+Epoch 5/10
+60000/60000 [==============================] - 32s - loss: 0.0416 - acc: 0.9863
+Epoch 6/10
+60000/60000 [==============================] - 32s - loss: 0.0398 - acc: 0.9875
+Epoch 7/10
+60000/60000 [==============================] - 32s - loss: 0.0339 - acc: 0.9890
+Epoch 8/10
+60000/60000 [==============================] - 32s - loss: 0.0322 - acc: 0.9897
+Epoch 9/10
+60000/60000 [==============================] - 32s - loss: 0.0308 - acc: 0.9903     
+Epoch 10/10
+60000/60000 [==============================] - 32s - loss: 0.0282 - acc: 0.9907     
+Train time: 326.480363846 sec
+Error rate: 0.87 %
+
+
+
+
+nvidia-smi -l 3
+
++------------------------------------------------------+
+| NVIDIA-SMI 352.99     Driver Version: 352.99         |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  Tesla K80           Off  | 0000:00:1E.0     Off |                    0 |
+| N/A   81C    P0    63W / 149W |    121MiB / 11519MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID  Type  Process name                               Usage      |
+|=============================================================================|
+|    0      1272    C   /usr/bin/python                                 64MiB |
++-----------------------------------------------------------------------------+
+
+
+
+mpstat -P ALL 3
+
+01:53:52 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:53:55 AM  all   54.60    0.00   22.00    0.00    0.00    0.00    0.09    0.00    0.00   23.31
+01:53:55 AM    0   54.55    0.00   20.98    0.00    0.00    0.35    0.35    0.00    0.00   23.78
+01:53:55 AM    1   55.94    0.00   20.28    0.00    0.00    0.00    0.00    0.00    0.00   23.78
+01:53:55 AM    2   51.57    0.00   24.74    0.00    0.00    0.00    0.00    0.00    0.00   23.69
+01:53:55 AM    3   55.94    0.00   22.03    0.00    0.00    0.00    0.35    0.00    0.00   21.68
+
+
+
+
+
+***   disable GPU / CPU only - p2.8xlarge 32 cores   ***
+
+CUDA_VISIBLE_DEVICES=-1 python 1-keras.py
+
+Using TensorFlow backend.
+I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcublas.so locally
+I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcudnn.so locally
+I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcufft.so locally
+I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcurand.so locally
+E tensorflow/stream_executor/cuda/cuda_driver.cc:491] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:153] retrieving CUDA diagnostic information for host: ip-172-31-37-94
+I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:160] hostname: ip-172-31-37-94
+I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:185] libcuda reported version is: 352.99.0
+I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:356] driver version file contents: """NVRM version: NVIDIA UNIX x86_64 Kernel Module  352.99  Mon Jul  4 23:52:14 PDT 2016
+GCC version:  gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3)
+"""
+I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:189] kernel reported version is: 352.99.0
+I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:293] kernel version seems to match DSO: 352.99.0
+Epoch 1/10
+60000/60000 [==============================] - 13s - loss: 0.3113 - acc: 0.9015
+Epoch 2/10
+60000/60000 [==============================] - 13s - loss: 0.0756 - acc: 0.9761
+Epoch 3/10
+60000/60000 [==============================] - 13s - loss: 0.0617 - acc: 0.9808
+Epoch 4/10
+60000/60000 [==============================] - 13s - loss: 0.0512 - acc: 0.9835
+Epoch 5/10
+60000/60000 [==============================] - 13s - loss: 0.0421 - acc: 0.9868
+Epoch 6/10
+60000/60000 [==============================] - 12s - loss: 0.0401 - acc: 0.9875
+Epoch 7/10
+60000/60000 [==============================] - 12s - loss: 0.0356 - acc: 0.9883    
+Epoch 8/10
+60000/60000 [==============================] - 13s - loss: 0.0333 - acc: 0.9892     
+Epoch 9/10
+60000/60000 [==============================] - 12s - loss: 0.0312 - acc: 0.9900     
+Epoch 10/10
+60000/60000 [==============================] - 12s - loss: 0.0279 - acc: 0.9906     
+Train time: 131.895182848 sec
+Error rate: 0.91 %
+
+
+
+nvidia-smi -l 3
+
++------------------------------------------------------+
+| NVIDIA-SMI 352.99     Driver Version: 352.99         |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  Tesla K80           Off  | 0000:00:17.0     Off |                    0 |
+| N/A   57C    P0    55W / 149W |    121MiB / 11519MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   1  Tesla K80           Off  | 0000:00:18.0     Off |                    0 |
+| N/A   33C    P8    29W / 149W |     55MiB / 11519MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   2  Tesla K80           Off  | 0000:00:19.0     Off |                    0 |
+| N/A   44C    P8    27W / 149W |     55MiB / 11519MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   3  Tesla K80           Off  | 0000:00:1A.0     Off |                    0 |
+| N/A   38C    P8    28W / 149W |     55MiB / 11519MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   4  Tesla K80           Off  | 0000:00:1B.0     Off |                    0 |
+| N/A   41C    P8    26W / 149W |     55MiB / 11519MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   5  Tesla K80           Off  | 0000:00:1C.0     Off |                    0 |
+| N/A   35C    P8    29W / 149W |     55MiB / 11519MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   6  Tesla K80           Off  | 0000:00:1D.0     Off |                    0 |
+| N/A   43C    P8    26W / 149W |     55MiB / 11519MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   7  Tesla K80           Off  | 0000:00:1E.0     Off |                    0 |
+| N/A   37C    P8    29W / 149W |     55MiB / 11519MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID  Type  Process name                               Usage      |
+|=============================================================================|
+|    0      1484    C   /usr/bin/python                                 64MiB |
++-----------------------------------------------------------------------------+
+
+
+mpstat -P ALL 3
+
+Average:     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+Average:     all   17.15    0.00   12.97    0.00    0.00    0.01    0.23    0.00    0.00   69.65
+Average:       0   16.99    0.00   13.63    0.00    0.00    0.35    0.18    0.00    0.00   68.85
+Average:       1   18.95    0.00   12.46    0.00    0.00    0.00    0.18    0.00    0.00   68.42
+Average:       2   19.48    0.00   13.22    0.00    0.00    0.00    0.35    0.00    0.00   66.96
+Average:       3   16.87    0.00   14.09    0.00    0.00    0.00    0.35    0.00    0.00   68.70
+Average:       4   19.04    0.00   11.92    0.00    0.00    0.00    0.18    0.00    0.00   68.86
+Average:       5   17.04    0.00   14.43    0.00    0.00    0.00    0.35    0.00    0.00   68.17
+Average:       6   17.37    0.00   13.86    0.00    0.00    0.00    0.18    0.00    0.00   68.60
+Average:       7   18.25    0.00   13.51    0.00    0.00    0.00    0.18    0.00    0.00   68.07
+Average:       8   17.57    0.00   13.57    0.00    0.00    0.00    0.35    0.00    0.00   68.52
+Average:       9   18.04    0.00   13.84    0.00    0.00    0.00    0.35    0.00    0.00   67.78
+Average:      10   17.40    0.00   13.01    0.00    0.00    0.00    0.18    0.00    0.00   69.42
+Average:      11   16.67    0.00   13.30    0.00    0.00    0.00    0.35    0.00    0.00   69.68
+Average:      12   17.38    0.00   12.23    0.00    0.00    0.00    0.18    0.00    0.00   70.21
+Average:      13   18.28    0.00   13.18    0.00    0.00    0.00    0.18    0.00    0.00   68.37
+Average:      14   18.05    0.00   12.57    0.00    0.00    0.00    0.18    0.00    0.00   69.20
+Average:      15   17.99    0.00   12.87    0.00    0.00    0.00    0.35    0.00    0.00   68.78
+Average:      16   15.88    0.00   12.91    0.00    0.00    0.00    0.35    0.00    0.00   70.86
+Average:      17   15.36    0.00   13.79    0.00    0.00    0.00    0.17    0.00    0.00   70.68
+Average:      18   15.06    0.00   13.49    0.00    0.00    0.00    0.18    0.00    0.00   71.28
+Average:      19   16.43    0.00   11.66    0.00    0.00    0.00    0.35    0.00    0.00   71.55
+Average:      20   16.90    0.00   11.85    0.00    0.00    0.00    0.35    0.00    0.00   70.91
+Average:      21   17.27    0.00   12.78    0.00    0.00    0.00    0.35    0.00    0.00   69.60
+Average:      22   16.67    0.00   11.63    0.00    0.00    0.00    0.35    0.00    0.00   71.35
+Average:      23   18.10    0.00   11.72    0.00    0.00    0.00    0.17    0.00    0.00   70.00
+Average:      24   15.59    0.00   13.31    0.00    0.00    0.00    0.18    0.00    0.00   70.93
+Average:      25   16.87    0.00   13.74    0.00    0.00    0.00    0.17    0.00    0.00   69.22
+Average:      26   16.72    0.00   12.72    0.00    0.00    0.00    0.17    0.00    0.00   70.38
+Average:      27   16.29    0.00   12.61    0.00    0.00    0.00    0.18    0.00    0.00   70.93
+Average:      28   16.46    0.00   12.61    0.00    0.00    0.00    0.18    0.00    0.00   70.75
+Average:      29   16.02    0.00   13.38    0.00    0.00    0.00    0.18    0.00    0.00   70.42
+Average:      30   15.92    0.00   13.49    0.00    0.00    0.00    0.35    0.00    0.00   70.24
+Average:      31   17.10    0.00   12.04    0.00    0.00    0.00    0.35    0.00    0.00   70.51
 
 
 
