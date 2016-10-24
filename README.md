@@ -29,11 +29,9 @@ On p2.xlarge (1 GPU):
 Tool               | Time (s) | GPU (%) | CPUs  | CPU1 (%) | Accuracy
 -------------------|----------|---------|-------|----------|----------
 Keras (tensorflow) |   37     |  66     |  4    |   18     |   0.8%
-Keras (theano)     |   146    |  86     |  1    |   100    |   0.9%
+Keras (theano)     |   130    |  97     |  1    |   100    |   0.9%
 
-Theano backend is 4x slower and uses only one CPU core.
-
-TODO: Fix `CNMeM is disabled, cuDNN 5103` for theano.
+Theano backend is 3.5x slower and uses only one CPU core.
 
 Tensorflow backend:
 
