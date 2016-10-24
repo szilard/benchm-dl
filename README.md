@@ -46,6 +46,7 @@ g2.2xlarge |  1   | GRID K520 |   56     |  70     |  1
 P2 GPU is 1.5x faster than G2. 
 
 Tensorflow uses only 1 GPU even on the multi-GPU server (on this small dataset/model).
+Theano obtained multi-GPU support only recently and has not been added to Keras yet.
 
 
 
