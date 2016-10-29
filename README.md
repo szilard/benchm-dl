@@ -32,8 +32,10 @@ Tool               | Time (s) | GPU (%) | CPUs  | CPU1 (%) | Accuracy
 -------------------|----------|---------|-------|----------|----------
 Keras (tensorflow) |   37     |  66     |  4    |   18     |   0.8%
 Keras (theano)     |   130    |  97     |  1    |   100    |   0.9%
+neon               |   25     |  57     |  1    |   100    |   0.9%
 
-Theano backend is 3.5x slower and uses only one CPU core.
+Tensoflow backend is 3.5x faster than Theano. Neon is 1.5x faster than Tensorflow.
+
 
 #### By GPU number/types
 
@@ -47,10 +49,14 @@ g2.2xlarge |  1   | GRID K520 |   56     |  70     |  1
 
 P2 GPU is 1.5x faster than G2. 
 
-Tensorflow uses only 1 GPU even on the multi-GPU server (on this small dataset/model).
-Theano obtained multi-GPU support only recently and has not been added to Keras yet.
+Tensorflow uses only 1 GPU even on the multi-GPU server (maybe because of small dataset/model).
+
+Theano obtained multi-GPU support only recently and that feature has not been added to Keras yet.
+
 
 #### GPU vs CPU
+
+Tensorflow backend:
 
 Device       | Time (s)  | vs GPU
 -------------|-----------|---------
