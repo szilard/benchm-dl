@@ -52,6 +52,8 @@ P2 GPU is 1.5x faster than G2.
 
 Tensorflow uses only 1 GPU even on the multi-GPU server (maybe because of small dataset/model).
 
+mxnet can be set to use multiple GPUs, but then it runs slower (probably because of small dataset/model).
+
 Theano obtained multi-GPU support only recently and that feature has not been added to Keras yet.
 
 

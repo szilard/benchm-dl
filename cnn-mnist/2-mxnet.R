@@ -38,8 +38,12 @@ fc3 <- mx.symbol.FullyConnected(data=relu4, num_hidden=10)
 model_spec <- mx.symbol.SoftmaxOutput(data=fc3)
 
 
-device.gpu <- mx.gpu(0)
+## n_gpu <- as.integer(system("nvidia-smi -L | wc -l", intern = TRUE))
+n_gpu <- 1   
+
+device.gpu <- lapply(0:(n_gpu-1),mx.gpu)
 mx.set.seed(0)
+
 
 tic <- proc.time()
 model <- mx.model.FeedForward.create(model_spec, X=train.array, y=train.y,
