@@ -19,22 +19,23 @@ Unfortunately most of the hype surrounding deep learning and "artificial intelli
 acknowledge this reality.
 
 
+
 ### Conv-nets (CNN) 
 
 Image recognition on the MNIST dataset.
 Code and detailed results [here](cnn-mnist).
 
+
 #### By Tools
 
 On p2.xlarge (1 GPU):
 
-Tool               | Time (s) | GPU (%) | CPUs  | CPU1 (%) | Accuracy
--------------------|----------|---------|-------|----------|----------
-Keras (tensorflow) |   37     |  66     |  4    |   18     |   0.8%
-Keras (theano)     |   130    |  97     |  1    |   100    |   0.9%
-neon               |   25     |  57     |  1    |   100    |   0.9%
-
-Tensoflow backend is 3.5x faster than Theano. Neon is 1.5x faster than Tensorflow.
+Tool               | Time (s) | Time | GPU (%) | CPUs  | CPU1 (%) | Accuracy
+-------------------|----------|------|---------|-------|----------|----------
+neon               |   25     |   1  |  57     |  1    |   100    |   0.9%
+Keras (tensorflow) |   37     |  1.5 |  66     |  4    |   18     |   0.8%
+mxnet              |   83     |   3  |  94     |  4    |   34     |   1.0%
+Keras (theano)     |   130    |   5  |  97     |  1    |   100    |   0.9%
 
 
 #### By GPU number/types
