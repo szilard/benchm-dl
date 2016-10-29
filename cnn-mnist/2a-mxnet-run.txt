@@ -5,6 +5,20 @@
 
 Rscript 2-mxnet.R
 
+Start training with 1 devices
+[1] Train-accuracy=0.916583199786325
+[2] Train-accuracy=0.973514125799574
+[3] Train-accuracy=0.98009394989339
+[4] Train-accuracy=0.984191764392324
+[5] Train-accuracy=0.985840884861407
+[6] Train-accuracy=0.98773987206823
+[7] Train-accuracy=0.989838752665245
+[8] Train-accuracy=0.990171908315565
+[9] Train-accuracy=0.991970948827292
+[10] Train-accuracy=0.991571162046908
+   user  system elapsed 
+115.013  34.359  83.371 
+Error rate: 1.02 %
 
 
 
