@@ -5,6 +5,26 @@
 
 Rscript 2-mxnet.R
 
+Loading required package: methods
+libdc1394 error: Failed to initialize libdc1394
+Parsed with column specification:
+cols(
+  .default = col_integer()
+)
+See spec(...) for full column specifications.
+Parsed with column specification:
+cols(
+  .default = col_integer()
+)
+See spec(...) for full column specifications.
+Parsed with column specification:
+cols(
+  X1 = col_integer()
+)
+Parsed with column specification:
+cols(
+  X1 = col_integer()
+)
 Start training with 1 devices
 [1] Train-accuracy=0.916583199786325
 [2] Train-accuracy=0.973514125799574
@@ -17,8 +37,10 @@ Start training with 1 devices
 [9] Train-accuracy=0.991970948827292
 [10] Train-accuracy=0.991571162046908
    user  system elapsed 
-115.013  34.359  83.371 
+115.774  33.889  83.411 
 Error rate: 1.02 %
+terminate called without an active exception
+Aborted (core dumped)
 
 
 
