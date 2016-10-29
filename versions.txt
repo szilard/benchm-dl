@@ -8,5 +8,6 @@ keras 1.1.0
 theano 0.8.2
 tensorflow 0.11.0rc0
 mxnet 0.7
+neon 1.6.0
 
 
