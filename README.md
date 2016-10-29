@@ -6,7 +6,7 @@ problems such as involving images, speech and text (supervised learning) and gam
 learning).
 
 In this repo we'll look at the performance of the most commonly used deep learning tools 
-*with high-level API* (keras on tensorflow and theano backends, mxnet etc.) 
+*with high-level API* (keras on tensorflow and theano backends, mxnet, neon etc.) 
 running on EC2 machines with GPUs (P2 instances with NVIDIA Tesla K80 GPUs)
 using the most common network architectures on basic datasets of the classes mentioned above.
 
@@ -30,12 +30,12 @@ Code and detailed results [here](cnn-mnist).
 
 On p2.xlarge (1 GPU):
 
-Tool               | Time (s) | Time | GPU (%) | CPUs  | CPU1 (%) | Accuracy
--------------------|----------|------|---------|-------|----------|----------
-neon               |   25     |   1  |  57     |  1    |   100    |   0.9%
-Keras (tensorflow) |   37     |  1.5 |  66     |  4    |   18     |   0.8%
-mxnet              |   83     |   3  |  94     |  4    |   34     |   1.0%
-Keras (theano)     |   130    |   5  |  97     |  1    |   100    |   0.9%
+Tool               | Time (s) | vs Best | GPU (%) | CPUs  | CPU1 (%) | Accuracy
+-------------------|----------|---------|---------|-------|----------|----------
+neon               |   25     |   1x    |  57     |  1    |   100    |   0.9%
+Keras (tensorflow) |   37     |  1.5x   |  66     |  4    |   18     |   0.8%
+mxnet              |   83     |   3x    |  94     |  4    |   34     |   1.0%
+Keras (theano)     |   130    |   5x    |  97     |  1    |   100    |   0.9%
 
 
 #### By GPU number/types
