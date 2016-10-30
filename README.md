@@ -56,6 +56,8 @@ mxnet can be set to use multiple GPUs, but then it runs slower (probably because
 
 Theano obtained multi-GPU support only recently and that feature has not been added to Keras yet.
 
+Neon disabled multi-GPU support (except on their cloud hosted version).
+
 
 #### GPU vs CPU
 
