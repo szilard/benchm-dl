@@ -32,10 +32,10 @@ On p2.xlarge (1 GPU):
 
 Tool               | Time (s) | vs Best | GPU (%) | CPUs  | CPU1 (%) | Accuracy
 -------------------|----------|---------|---------|-------|----------|----------
-neon               |   25     |   1x    |  57     |  1    |   100    |   0.9%
-Keras (tensorflow) |   37     |  1.5x   |  66     |  4    |   18     |   0.8%
-mxnet              |   83     |   3x    |  94     |  4    |   34     |   1.0%
-Keras (theano)     |   130    |   5x    |  97     |  1    |   100    |   0.9%
+neon               |   25     | **1x**  |  57     |  1    |   100    |   0.9%
+Keras (tensorflow) |   37     |**1.5x** |  66     |  4    |   18     |   0.8%
+mxnet              |   83     | **3x**  |  94     |  4    |   34     |   1.0%
+Keras (theano)     |   130    | **5x**  |  97     |  1    |   100    |   0.9%
 
 
 #### By GPU number/types
@@ -48,7 +48,7 @@ p2.xlarge  |  1   | Tesla K80 |   37     |  66     |  1
 p2.8xlarge |  8   | Tesla K80 |   36     | 67 (1)  |  1/8
 g2.2xlarge |  1   | GRID K520 |   56     |  70     |  1
 
-P2 GPU is 1.5x faster than G2. 
+**P2** GPU is **1.5x** faster than **G2**. 
 
 Tensorflow uses only 1 GPU even on the multi-GPU server (maybe because of small dataset/model).
 
@@ -68,5 +68,7 @@ Device       | Time (s)  | vs GPU
 GPU (P2)     |   37      |   1x
 CPU 4 cores  |  326      |   9x
 CPU 32 cores |  130      |  3.5x
+
+"If it's not running on the GPU, it's crap" - Scott Le Grand [[ref](http://datascience.la/dsstne-a-new-deep-learning-framework-for-large-sparse-datasets/)]
 
 
