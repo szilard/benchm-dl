@@ -6,7 +6,7 @@ problems such as involving images, speech and text (supervised learning) and gam
 learning).
 
 In this repo we'll look at the performance of the most commonly used deep learning tools 
-*with high-level API* (keras on tensorflow and theano backends, mxnet, neon etc.) 
+*with high-level API* from R/Python (keras on tensorflow and theano backends, mxnet, neon etc.) 
 running on EC2 machines with GPUs (P2 instances with NVIDIA Tesla K80 GPUs)
 using the most common network architectures on basic datasets of the classes mentioned above.
 
