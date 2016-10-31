@@ -53,7 +53,7 @@ model.add(Dense(128, activation = 'relu'))
 model.add(Dense(64, activation = 'relu'))
 model.add(Dense(10, activation = 'softmax'))
 sgd = SGD(lr=0.05, decay=1e-5, momentum=0.9)
-model.compile(loss = 'categorical_crossentropy', optimizer = sgd, metrics = ['accuracy'])
+model.compile(loss = 'categorical_crossentropy', optimizer = sgd, metrics = ['metrics'])
 
 
 start = time.time()
@@ -62,6 +62,6 @@ end = time.time()
 print('Train time:', end - start, 'sec')
 
 
-accuracy = model.evaluate(X_test, Y_test, verbose=0)
-print('Error rate:', 100*(1-accuracy[1]), '%')
+metrics = model.evaluate(X_test, Y_test, verbose=0)
+print('Error rate:', 100*(1-metrics[1]), '%')
 
