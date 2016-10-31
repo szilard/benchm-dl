@@ -62,6 +62,6 @@ end = time.time()
 print('Train time:', end - start, 'sec')
 
 
-score = model.evaluate(X_test, Y_test, verbose=0)
-print('Error rate:', 100*(1-score[1]), '%')
+accuracy = model.evaluate(X_test, Y_test, verbose=0)
+print('Error rate:', 100*(1-accuracy[1]), '%')
 
