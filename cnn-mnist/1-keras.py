@@ -53,7 +53,7 @@ model.add(Dense(128, activation = 'relu'))
 model.add(Dense(64, activation = 'relu'))
 model.add(Dense(10, activation = 'softmax'))
 sgd = SGD(lr=0.05, decay=1e-5, momentum=0.9)
-model.compile(loss = 'categorical_crossentropy', optimizer = sgd, metrics = ['metrics'])
+model.compile(loss = 'categorical_crossentropy', optimizer = sgd, metrics = ['accuracy'])
 
 
 start = time.time()
