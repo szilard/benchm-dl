@@ -30,12 +30,12 @@ Code and detailed results [here](cnn-mnist).
 
 On p2.xlarge (1 GPU):
 
-Tool               | Time (s) | vs Best | GPU (%) | CPUs  | CPU1 (%) | Accuracy
--------------------|----------|---------|---------|-------|----------|----------
-neon               |   25     |         |  57     |  1    |   100    |   0.9%
-Keras (tensorflow) |   37     |**1.5x** |  66     |  4    |   18     |   0.8%
-mxnet              |   50     | **2x**  |  94     |  4    |   34     |   1.0%
-Keras (theano)     |   130    | **5x**  |  97     |  1    |   100    |   0.9%
+Tool               | Time (s) | vs Best |  vs TF  |GPU (%) | CPUs  | CPU1 (%) | Accuracy
+-------------------|----------|---------|---------|--------|-------|----------|----------
+neon               |   25     |         |  0.7x   |  57    |  1    |   100    |   0.9%
+Keras (tensorflow) |   37     |**1.5x** |         | 66     |  4    |   18     |   0.8%
+mxnet              |   50     | **2x**  |  1.3x   | 94     |  4    |   34     |   1.0%
+Keras (theano)     |   130    | **5x**  |  3.5x   | 97     |  1    |   100    |   0.9%
 
 
 #### By GPU number/types
