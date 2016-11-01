@@ -22,7 +22,8 @@ acknowledge this reality.
 
 ### Conv-nets (CNN) 
 
-Image recognition on the MNIST dataset.
+Image recognition on the MNIST dataset. 2x conv+pooling, dropout, 2x fully connected layers,
+trained with SGD for 10 epochs.
 Code and detailed results [here](cnn-mnist).
 
 
