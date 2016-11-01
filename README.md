@@ -31,7 +31,7 @@ Code and detailed results [here](cnn-mnist).
 
 On p2.xlarge (1 GPU):
 
-Tool               | Time (s) | vs Best |  vs TF  |GPU (%) | CPUs  | CPU1 (%) | Accuracy
+Tool               | Time (s) | vs Best |  vs TF  |GPU (%) | CPUs  | CPU1 (%) | Error rate
 -------------------|----------|---------|---------|--------|-------|----------|----------
 neon               |   25     |         |  0.7x   |  57    |  1    |   100    |   0.9%
 Keras (tensorflow) |   37     |**1.5x** |         | 66     |  4    |   18     |   0.8%
