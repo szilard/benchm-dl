@@ -21,21 +21,21 @@ dim(test.array) <- c(28, 28, 1, ncol(test.x))
 
 
 data <- mx.symbol.Variable('data')
-conv1 <- mx.symbol.Convolution(data=data, kernel=c(4,4), num_filter=32)
-relu1 <- mx.symbol.Activation(data=conv1, act_type="relu")
-pool1 <- mx.symbol.Pooling(data=relu1, pool_type="max", kernel=c(2,2))
-conv2 <- mx.symbol.Convolution(data=pool1, kernel=c(3,3), num_filter=16)
-relu2 <- mx.symbol.Activation(data=conv2, act_type="relu")
-pool2 <- mx.symbol.Pooling(data=relu2, pool_type="max", kernel=c(2,2))
-drop1 <- mx.symbol.Dropout(data=pool2, p=0.2) 
+conv1 <- mx.symbol.Convolution(data = data, kernel = c(4,4), num_filter = 32)
+relu1 <- mx.symbol.Activation(data = conv1, act_type = "relu")
+pool1 <- mx.symbol.Pooling(data = relu1, pool_type = "max", kernel = c(2,2))
+conv2 <- mx.symbol.Convolution(data = pool1, kernel = c(3,3), num_filter = 16)
+relu2 <- mx.symbol.Activation(data = conv2, act_type = "relu")
+pool2 <- mx.symbol.Pooling(data = relu2, pool_type = "max", kernel = c(2,2))
+drop1 <- mx.symbol.Dropout(data = pool2, p = 0.2) 
 
-flatten1 <- mx.symbol.Flatten(data=drop1)
-fc1 <- mx.symbol.FullyConnected(data=flatten1, num_hidden=128)
-relu3 <- mx.symbol.Activation(data=fc1, act_type="relu")
-fc2 <- mx.symbol.FullyConnected(data=relu3, num_hidden=64)
-relu4 <- mx.symbol.Activation(data=fc2, act_type="relu")
-fc3 <- mx.symbol.FullyConnected(data=relu4, num_hidden=10)
-model_spec <- mx.symbol.SoftmaxOutput(data=fc3)
+flatten1 <- mx.symbol.Flatten(data = drop1)
+fc1 <- mx.symbol.FullyConnected(data = flatten1, num_hidden = 128)
+relu3 <- mx.symbol.Activation(data = fc1, act_type = "relu")
+fc2 <- mx.symbol.FullyConnected(data = relu3, num_hidden = 64)
+relu4 <- mx.symbol.Activation(data = fc2, act_type = "relu")
+fc3 <- mx.symbol.FullyConnected(data = relu4, num_hidden = 10)
+model_spec <- mx.symbol.SoftmaxOutput(data = fc3)
 
 
 ## n_gpu <- as.integer(system("nvidia-smi -L | wc -l", intern = TRUE))
@@ -46,13 +46,13 @@ mx.set.seed(0)
 
 
 tic <- proc.time()
-model <- mx.model.FeedForward.create(model_spec, X=train.array, y=train.y,
+model <- mx.model.FeedForward.create(model_spec, X = train.array, y = train.y,
                initializer = mx.init.normal(0.1),
-               eval.metric=mx.metric.accuracy,
-               optimizer = mxnet:::mx.opt.sgd(learning.rate=0.05, momentum=0.9, wd=1e-5),
-               ctx=device.gpu, 
-               num.round=10, array.batch.size=128,
-               epoch.end.callback=mx.callback.log.train.metric(100))
+               eval.metric = mx.metric.accuracy,
+               optimizer = mxnet:::mx.opt.sgd(learning.rate = 0.05, momentum = 0.9, wd = 1e-5),
+               ctx = device.gpu, 
+               num.round = 10, array.batch.size = 128,
+               epoch.end.callback = mx.callback.log.train.metric(100))
 print(proc.time() - tic)
 
 
