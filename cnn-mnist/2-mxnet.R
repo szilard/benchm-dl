@@ -47,10 +47,11 @@ mx.set.seed(0)
 
 tic <- proc.time()
 model <- mx.model.FeedForward.create(model_spec, X=train.array, y=train.y,
-               ctx=device.gpu, num.round=10, array.batch.size=128,
-               learning.rate=0.05, momentum=0.9, wd=1e-5,
                initializer = mx.init.normal(0.1),
                eval.metric=mx.metric.accuracy,
+               optimizer = mxnet:::mx.opt.sgd(learning.rate=0.05, momentum=0.9, wd=1e-5),
+               ctx=device.gpu, 
+               num.round=10, array.batch.size=128,
                epoch.end.callback=mx.callback.log.train.metric(100))
 print(proc.time() - tic)
 
