@@ -9,7 +9,7 @@ from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Dropout
 from keras.optimizers import SGD
 from keras.callbacks import EarlyStopping
-from keras import initializations
+from keras import initializers
 from keras.utils import np_utils
 from keras import backend as K
 import numpy as np
@@ -36,20 +36,17 @@ Y_train = np_utils.to_categorical(y_train, 10)
 Y_test = np_utils.to_categorical(y_test, 10)
 
 
-def my_init(shape, name=None):
-    return initializations.normal(shape, scale=0.1, name=name)
-
 model = Sequential()
-model.add(Conv2D(32, (4, 4), input_shape = input_shape, activation = 'relu', init = my_init))
+model.add(Conv2D(32, (4, 4), input_shape = input_shape, activation = 'relu', kernel_initializer=initializers.random_normal(stddev=0.1)))
 model.add(MaxPooling2D(pool_size = (2,2)))
-model.add(Conv2D(16, (3, 3), activation = 'relu', init = my_init))
+model.add(Conv2D(16, (3, 3), activation = 'relu', kernel_initializer=initializers.random_normal(stddev=0.1)))
 model.add(MaxPooling2D(pool_size = (2,2)))
 model.add(Dropout(0.2))
 
 model.add(Flatten())
-model.add(Dense(128, activation = 'relu', init = my_init))
-model.add(Dense(64, activation = 'relu', init = my_init))
-model.add(Dense(10, activation = 'softmax', init = my_init))
+model.add(Dense(128, activation = 'relu', init = kernel_initializer=initializers.random_normal(stddev=0.1)))
+model.add(Dense(64, activation = 'relu', init = kernel_initializer=initializers.random_normal(stddev=0.1)))
+model.add(Dense(10, activation = 'softmax', init = kernel_initializer=initializers.random_normal(stddev=0.1)))
 
 
 sgd = SGD(lr=0.05, decay=1e-5, momentum=0.9)
