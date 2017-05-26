@@ -10,4 +10,10 @@ tensorflow 0.11.0rc0
 mxnet 0.7 8e1e7f0
 neon 1.6.0
 
+-------
+
+CUDA 8.0
+Keras (2.0.4)
+tensorflow-gpu (1.1.0)
+
 
