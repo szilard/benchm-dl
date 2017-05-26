@@ -44,9 +44,9 @@ model.add(MaxPooling2D(pool_size = (2,2)))
 model.add(Dropout(0.2))
 
 model.add(Flatten())
-model.add(Dense(128, activation = 'relu', init = kernel_initializer=initializers.random_normal(stddev=0.1)))
-model.add(Dense(64, activation = 'relu', init = kernel_initializer=initializers.random_normal(stddev=0.1)))
-model.add(Dense(10, activation = 'softmax', init = kernel_initializer=initializers.random_normal(stddev=0.1)))
+model.add(Dense(128, activation = 'relu', kernel_initializer=initializers.random_normal(stddev=0.1)))
+model.add(Dense(64, activation = 'relu', kernel_initializer=initializers.random_normal(stddev=0.1)))
+model.add(Dense(10, activation = 'softmax', kernel_initializer=initializers.random_normal(stddev=0.1)))
 
 
 sgd = SGD(lr=0.05, decay=1e-5, momentum=0.9)
