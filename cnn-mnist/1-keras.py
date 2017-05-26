@@ -14,13 +14,6 @@ import numpy as np
 import time
 
 
-## ONLY for tensorflow backend:
-## bug workaround for model.add(Dropout(0.2)) -> AttributeError: 'module' object has no attribute 'control_flow_ops'
-## see https://github.com/fchollet/keras/issues/3857#issuecomment-251385542
-import tensorflow as tf
-tf.python.control_flow_ops = tf
-
-
 np.random.seed(123)  
 
 
@@ -42,9 +35,9 @@ Y_test = np_utils.to_categorical(y_test, 10)
 
 
 model = Sequential()
-model.add(Convolution2D(32, 4, 4, input_shape = input_shape, activation = 'relu'))
+model.add(Convolution2D(32, (4, 4), input_shape = input_shape, activation = 'relu'))
 model.add(MaxPooling2D(pool_size = (2,2)))
-model.add(Convolution2D(16, 3, 3, activation = 'relu'))
+model.add(Convolution2D(16, (3, 3), activation = 'relu'))
 model.add(MaxPooling2D(pool_size = (2,2)))
 model.add(Dropout(0.2))
 
@@ -57,7 +50,7 @@ model.compile(loss = 'categorical_crossentropy', optimizer = sgd, metrics = ['ac
 
 
 start = time.time()
-model.fit(X_train, Y_train, batch_size = 128, nb_epoch = 10)
+model.fit(X_train, Y_train, batch_size = 128, epochs = 10)
 end = time.time()
 print('Train time:', end - start, 'sec')
 
