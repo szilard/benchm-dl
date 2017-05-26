@@ -6,7 +6,7 @@
 from __future__ import print_function
 from keras.datasets import mnist
 from keras.models import Sequential
-from keras.layers import Convolution2D, MaxPooling2D, Dense, Flatten, Dropout
+from keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Dropout
 from keras.optimizers import SGD
 from keras.callbacks import EarlyStopping
 from keras import initializations
@@ -14,13 +14,6 @@ from keras.utils import np_utils
 from keras import backend as K
 import numpy as np
 import time
-
-
-## ONLY for tensorflow backend:
-## bug workaround for model.add(Dropout(0.2)) -> AttributeError: 'module' object has no attribute 'control_flow_ops'
-## see https://github.com/fchollet/keras/issues/3857#issuecomment-251385542
-import tensorflow as tf
-tf.python.control_flow_ops = tf
 
 
 np.random.seed(123)  
@@ -47,9 +40,9 @@ def my_init(shape, name=None):
     return initializations.normal(shape, scale=0.1, name=name)
 
 model = Sequential()
-model.add(Convolution2D(32, 4, 4, input_shape = input_shape, activation = 'relu', init = my_init))
+model.add(Conv2D(32, (4, 4), input_shape = input_shape, activation = 'relu', init = my_init))
 model.add(MaxPooling2D(pool_size = (2,2)))
-model.add(Convolution2D(16, 3, 3, activation = 'relu', init = my_init))
+model.add(Conv2D(16, (3, 3), activation = 'relu', init = my_init))
 model.add(MaxPooling2D(pool_size = (2,2)))
 model.add(Dropout(0.2))
 
@@ -66,7 +59,7 @@ early_stopping = EarlyStopping(monitor='val_loss', patience=5)
 
 
 start = time.time()
-hist = model.fit(X_train, Y_train, batch_size = 128, nb_epoch = 1000, validation_split=0.2, callbacks=[early_stopping])
+hist = model.fit(X_train, Y_train, batch_size = 128, epochs = 1000, validation_split=0.2, callbacks=[early_stopping])
 end = time.time()
 print('Train time:', end - start, 'sec')
 
