@@ -78,4 +78,22 @@ install_tensorflow(gpu = TRUE)
 
 
 
+#### CNTK
+
+https://docs.microsoft.com/en-us/cognitive-toolkit/setup-linux-python
+
+sudo apt-get install openmpi-bin
+
+pip install https://cntk.ai/PythonWheel/GPU/cntk-2.0-cp27-cp27mu-linux_x86_64.whl
+
+# latest keras release does not have cntk backend
+# assert _backend in {'theano', 'tensorflow'}
+pip install git+git://github.com/souptc/keras.git --upgrade --no-deps
+
+KERAS_BACKEND=cntk python 1-keras.py
+
+
+
+
+
 
