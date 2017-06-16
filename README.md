@@ -49,6 +49,7 @@ mxnet		       |   25     | **1.1x**|  0.5x   |  0.8%
 Keras (tensorflow) |   27     | **1.2x**|  0.7x   |  0.8%
 Keras (theano)     |   73     | **3.2x**|  0.6x   |  0.9%
 
+Let's say that GTX 1080 Ti is *~2x* faster than K80.
 
 
 #### By GPU number/types
