@@ -40,13 +40,14 @@ Keras (CNTK)       |   58     |**2.3x** |  1.6x   | 80     |  1    |   100    | 
 Keras (theano)     |   130    | **5x**  |  3.5x   | 97     |  1    |   100    |   0.9%
 mxnet              |   50     | **2x**  |  1.3x   | 94     |  4    |   34     |   1.0%
 
-On GTX 1080 Ti contributed by @jeongyoonlee:
+On GTX 1080 Ti:
 
 Tool               | Time (s) | vs Best |  vs K80 | Error rate
 -------------------|----------|---------|---------|----------
-Keras (tensorflow) |          |         |         |  
-Keras (CNTK)       |          |         |         | 
-Keras (theano)     |          |         |         | 
+Keras (CNTK)       |   23     |         |  0.4x   |  0.9%
+mxnet		       |   25     | **1.1x**|  0.5x   |  0.8%
+Keras (tensorflow) |   27     | **1.2x**|  0.7x   |  0.8%
+Keras (theano)     |   73     | **3.2x**|  0.6x   |  0.9%
 
 
 
