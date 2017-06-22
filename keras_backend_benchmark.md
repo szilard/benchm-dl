@@ -8,6 +8,7 @@ CNTK is significantly faster than TensorFlow and Theano.
 
 #### Accuracy
 Validation accuray after 4 epochs
+
 Backend				|	K80		| GTX Titan X	|	GTX 1080 Ti
 --------------------|-----------|---------------|-----------------
 Theano				| 			| 0.8310		| 0.8364 
@@ -16,6 +17,7 @@ CNTK				|**0.8354**	| 0.8325		|**0.8388**
 
 #### Speed
 Average time in seconds for 4 epochs
+
 Backend				|	K80			| GTX Titan X	|	GTX 1080 Ti
 --------------------|---------------|---------------|-----------------
 Theano				| 				| 310.3	(3.1x)	| 148.5 (1.6x)
@@ -27,6 +29,7 @@ TensorFlow and CNTK are significantly faster than Theano, while CNTK is slightly
 
 #### Accuracy
 Validation accuracy after 5 epochs
+
 Backend				|	K80		| GTX Titan X	|	GTX 1080 Ti
 --------------------|-----------|---------------|-----------------
 Theano				| 			|**0.8856**		|**0.8856**
@@ -35,6 +38,7 @@ CNTK				| 0.9064	| 0.8854		| 0.8854
 
 #### Speed
 Average time in seconds for 5 epochs
+
 Backend				|	K80			| GTX Titan X	|	GTX 1080 Ti
 --------------------|---------------|---------------|-----------------
 Theano				| 				| 10.9 (3.2x)	| 9.5 (3.5x)
@@ -46,6 +50,7 @@ TensorFlow and CNTK are significantly faster than Theano, while CNTK is slightly
 
 #### Accuracy
 Validation accuracy after 20 epochs
+
 Backend				|	K80		| GTX Titan X	|	GTX 1080 Ti
 --------------------|-----------|---------------|-----------------
 Theano				| 			|**0.9843**		|**0.9843**
@@ -54,6 +59,7 @@ CNTK				| 0.9796	|0.9835			|0.9830
 
 #### Speed
 Average time in seconds for 20 epochs
+
 Backend				|	K80			| GTX Titan X	|	GTX 1080 Ti
 --------------------|---------------|---------------|-----------------
 Theano				| 				|20.0 (14.3x)	| 3.6 (2.8x)
@@ -65,6 +71,7 @@ TensorFlow and CNTK are significantly faster than Theano while TensorFlow is sli
 
 #### Accuracy
 Validation accuracy after 12 epochs
+
 Backend				|	K80		| GTX Titan X	|	GTX 1080 Ti
 --------------------|-----------|---------------|-----------------
 Theano				| 			|0.9905			|0.9894
@@ -73,6 +80,7 @@ CNTK				|0.9892		|0.9908			|**0.9910**
 
 #### Speed
 Average time in seconds for 12 epochs
+
 Backend				|	K80			| GTX Titan X	|	GTX 1080 Ti
 --------------------|---------------|---------------|-----------------
 Theano				| 				|332.2 (53.6x)	|17.3 (3.7x)
@@ -84,6 +92,7 @@ TensorFlow and CNTK are significantly faster than Theano while TensorFlow is sli
 
 #### Accuracy
 Validation accuracy after 20 epochs
+
 Backend				|	K80		| GTX Titan X	|	GTX 1080 Ti
 --------------------|-----------|---------------|-----------------
 Theano				| 			|**0.7446**		|**0.7531**
@@ -92,6 +101,7 @@ CNTK				|0.7400		|0.7226			|0.7410
 
 #### Speed
 Average time in seconds for 20 epochs
+
 Backend				|	K80			| GTX Titan X	|	GTX 1080 Ti
 --------------------|---------------|---------------|-----------------
 Theano				| 				|630.3 (24.5x)	|40.3 (2.8x)
@@ -103,6 +113,7 @@ CNTK is significantly faster than TensorFlow and Theano.
 
 #### Loss
 Validation loss after 10 epochs
+
 Backend				|	K80		| GTX Titan X	|	GTX 1080 Ti
 --------------------|-----------|---------------|-----------------
 Theano				| 			|1.3988			|1.3988
@@ -111,6 +122,7 @@ CNTK				|**1.4047**	|1.3980			|**1.3956**
 
 #### Speed
 Average time in seconds for 10 epochs
+
 Backend				|	K80			| GTX Titan X	|	GTX 1080 Ti
 --------------------|---------------|---------------|-----------------
 Theano				| 				|548.0 (13.2x)	|83.1 (2.5x)
