@@ -1,8 +1,10 @@
 # Keras Backend Benchmark
 Inspired by [Max Woolf's benchmark](http://minimaxir.com/2017/06/keras-cntk/), the performance of 3 different backends (Theano, TensorFlow, and CNTK) of Keras with 3 different GPUs (K80, Titan X, and 1080 Ti) across various neural network tasks are compared.
 
+For the performance of TensorFlow and CNTK with K80, the numbers reported at [Max Woolf's benchmark](http://minimaxir.com/2017/06/keras-cntk/) are used.
+
 ## Conclusion
-The accuracies of Theano, TensorFlow and CNTK backends are similar across all benchmark tests, while speeds vary a lot. Theano is significantly (up to 50 times) slower than TensorFlow and CNTK. Between TensorFlow and CNTK, CNTK is a lot (about 2 to 4 times) faster than TensorFlow for LSTM (Bidirectional LSTM on IMDb Data and Text Generation via LSTM), while speeds for other thpes of neural networks are close to each other.
+The accuracies of Theano, TensorFlow and CNTK backends are similar across all benchmark tests, while speeds vary a lot. Theano is significantly (up to 50 times) slower than TensorFlow and CNTK. Between TensorFlow and CNTK, CNTK is a lot (about 2 to 4 times) faster than TensorFlow for LSTM (Bidirectional LSTM on IMDb Data and Text Generation via LSTM), while speeds for other type of neural networks are close to each other.
 
 Among K80, Titan X and 1080 Ti GPUs, 1080 Ti is the fastest and K80 is the slowest. Theano is significantly (up to 14 times) faster on 1080 Ti than on Titan X, while the improvements for TensorFlow and CNTK are moderate.
 
@@ -120,7 +122,7 @@ Validation loss after 10 epochs
 
 Backend				|	K80		|  Titan X	|	 1080 Ti
 --------------------|-----------|---------------|-----------------
-Theano				| 			|1.3988			|1.3988
+Theano				| 			|1.4268			|1.3988
 TensorFlow			|1.4060		|1.4138			|1.3976
 CNTK				|**1.4047**	|1.3980			|**1.3956**
 
@@ -129,6 +131,6 @@ Average time in seconds for 10 epochs
 
 Backend				|	K80			|  Titan X	|	 1080 Ti
 --------------------|---------------|---------------|-----------------
-Theano				| 				|548.0 (13.2x)	|83.1 (2.5x)
+Theano				| 				|548.3 (13.2x)	|83.1 (2.5x)
 TensorFlow			|87.6 (1.9x)	|162.2 (3.9x)	|107.6 (3.3x)
 CNTK				|**46.4**		|**41.4**		|**32.7**
