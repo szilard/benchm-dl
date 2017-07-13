@@ -3,6 +3,8 @@ Inspired by [Max Woolf's benchmark](http://minimaxir.com/2017/06/keras-cntk/), t
 
 For the performance of TensorFlow and CNTK with K80, the numbers reported at [Max Woolf's benchmark](http://minimaxir.com/2017/06/keras-cntk/) are used.
 
+The benchmark test environment is described at [versions.txt](./versions.txt).
+
 ## Conclusion
 The accuracies of Theano, TensorFlow and CNTK backends are similar across all benchmark tests, while speeds vary a lot. Theano is significantly (up to 50 times) slower than TensorFlow and CNTK. Between TensorFlow and CNTK, CNTK is a lot (about 2 to 4 times) faster than TensorFlow for LSTM (Bidirectional LSTM on IMDb Data and Text Generation via LSTM), while speeds for other type of neural networks are close to each other.
 
