@@ -51,6 +51,14 @@ Keras (theano)     |   73     | **3.2x**|  0.6x   |  0.9%
 
 Let's say that GTX 1080 Ti is **~2x** faster than K80.
 
+On p3.2xlarge (Tesla V100):
+
+Tool               | Time (s) |  Error rate
+-------------------|----------|--------------
+Keras (tensorflow) |   20     |  0.7%
+
+1.3x faster than GTX 1080 Ti, 1.8x faster than K80 (keras TF)
+
 
 #### By GPU number/types
 
